@@ -1,160 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mi-html-framework</title>
-
+    
     <link href="https://bootswatch.com/5/cyborg/bootstrap.min.css" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --rojo-personal: #fa0202;
+        :root { --rojo: #fa0202; --oscuro-card: rgba(15, 15, 15, 0.9); }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: radial-gradient(circle at top, #1a1a1a 0%, #06090f 100%);
+            color: #f0f0f0;
         }
 
-        body {
-            font-family: 'Roboto Slab', serif;
+        h1, h2, h3 { font-family: 'Roboto Slab', serif; }
+
+        .navbar { 
+            backdrop-filter: blur(10px); 
+            border-bottom: 1px solid rgba(250, 2, 2, 0.2); 
         }
 
-        /* Personalización de colores */
-        .text-danger {
-            color: var(--rojo-personal) !important;
+        /* DISEÑO DE TARJETAS TIPO VIDRIO */
+        .glass-card {
+            background: var(--oscuro-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: all 0.4s ease;
         }
 
-        .border-danger {
-            border-color: var(--rojo-personal) !important;
-        }
-
-        /* Estilo de las cajas (Sections) */
-        section {
-            background-color: #111;
-            padding: 25px;
+        /* ANIMACIÓN DE HABILIDADES (SE ENGRANDECE Y NEGRITA) */
+        .habilidad-item {
+            list-style: none;
+            padding: 12px;
+            margin-bottom: 10px;
             border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #222;
-            transition: 0.3s;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 4px solid transparent;
+            cursor: default;
+        }
+        .habilidad-item:hover {
+            background: rgba(250, 2, 2, 0.1);
+            transform: scale(1.06) translateX(10px);
+            font-weight: 700;
+            border-left: 4px solid var(--rojo);
+            color: #fff;
         }
 
-        section:hover {
-            border-color: var(--rojo-personal);
-            background-color: #161616;
+        /* ANIMACIÓN DE EXPERIENCIA (NEÓN Y ELEVACIÓN) */
+        .experiencia-card {
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+            background: rgba(255,255,255,0.02);
+        }
+        .experiencia-card:hover {
+            transform: translateY(-10px);
+            background: rgba(250, 2, 2, 0.05);
+            border-color: var(--rojo);
+            box-shadow: 0 0 20px rgba(250, 2, 2, 0.3);
         }
 
         .img-perfil {
-            border: 4px solid var(--rojo-personal);
-            object-fit: cover;
+            border: 4px solid var(--rojo);
+            box-shadow: 0 0 30px rgba(250, 2, 2, 0.5);
+            transition: 0.5s;
         }
+        .img-perfil:hover { transform: scale(1.05) rotate(2deg); }
 
-        /* Estilo para las listas igual al tuyo */
-        ul li {
-            margin-bottom: 10px;
-        }
+        .text-danger { color: var(--rojo) !important; }
+        
+        footer a { color: #fa0202; text-decoration: none; transition: 0.3s; }
+        footer a:hover { color: var(--rojo); text-shadow: 0 0 10px var(--rojo); }
 
-        footer img {
-            filter: invert(1);
-            transition: 0.3s;
-        }
-
-        footer img:hover {
-            filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
-        }
+        .github-icon { filter: invert(1); transition: 0.4s; opacity: 0.7; }
+        .github-icon:hover { opacity: 1; transform: scale(1.2); }
     </style>
 </head>
-
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand text-danger" href="#">MI PERFIL</a>
+            <a class="navbar-brand fw-bold" href="#"><span class="text-danger">J</span>S<span class="text-danger">C</span>H</a>
             <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="#inicio">Inicio</a>
+                <a class="nav-link" href="#perfil">Perfil</a>
                 <a class="nav-link" href="#habilidades">Habilidades</a>
                 <a class="nav-link" href="#experiencia">Experiencia</a>
             </div>
         </div>
     </nav>
 
-    <div class="container" id="inicio">
-        <header class="text-center mb-5">
-            <h1 class="text-danger mb-4">Tarjeta de Presentación</h1>
-            <img src="IMG-Perfil.jpg" alt="Foto-Perfil" class="rounded-circle img-perfil mb-4" width="150" height="150">
-            <div class="info-personal">
+    <div class="container mt-5">
+        <header id="inicio" class="text-center mb-5">
+            <h1 class="display-3 fw-bold mb-4 text-danger">Tarjeta de Presentación</h1>
+            <img src="IMG-Perfil.jpg" alt="Jeffry" class="rounded-circle img-perfil mb-4" width="160" height="160">
+            <div class="info-principal fs-5">
                 <p><strong>Nombre:</strong> Jeffry Santiago Casas Hernandez</p>
-                <p><strong>Profesión:</strong> Aprendiz en Técnico Laboral por Competencias Auxiliar en Plataformas
-                    Tecnológicas y Aplicaciones SG</p>
+                <p><strong>Profesión:</strong> Aprendiz en Técnico Laboral por Competencias Auxiliar en Plataformas Tecnológicas y Aplicaciones SG</p>
                 <p><strong>Cargo actual:</strong> Practicante en Agente de Mesa de Ayuda Nivel 1</p>
             </div>
         </header>
 
         <main>
-            <section>
-                <h2 class="text-danger"><strong>Perfil profesional</strong></h2>
-                <p>Soy bachiller académico y actualmente soy estudiante con 10 meses de formación técnica en Plataformas
-                    Tecnológicas. Me destaco por mi capacidad para aprender rápido y por mi trabajo como <strong>Agente
-                        de Soporte Nivel 1 para Ecopetrol</strong>.</p>
+            <section id="perfil" class="glass-card">
+                <h2 class="text-danger mb-4">Perfil profesional</h2>
+                <p class="fs-5">Soy bachiller académico y actualmente soy estudiante con 10 meses de formación técnica en Plataformas Tecnológicas. Me destaco por mi capacidad para aprender rápido y por mi trabajo como <strong>Agente de Soporte Nivel 1 para Ecopetrol</strong>.</p>
             </section>
 
-            <section id="habilidades">
-                <h2 class="text-danger"><strong>Habilidades</strong></h2>
-                <ul>
-                    <li><strong>Mantenimiento:</strong> Preventivo y correctivo de hardware y software en computadores
-                        (portátiles y torres) e impresoras (láser y de tinta).</li>
-                    <li><strong>Soporte de Aplicaciones:</strong> Instalación, configuración de parámetros, gestión de
-                        drivers y soporte técnico de aplicaciones corporativas.</li>
-                    <li><strong>Herramientas de Desarrollo:</strong> Aprendizaje activo en Visual Studio Code, Git y
-                        GitHub.</li>
-                    <li><strong>Ofimática:</strong> Manejo de herramientas como Excel y Word para reportes técnicos.
-                    </li>
-                </ul>
+            <section id="habilidades" class="glass-card">
+                <h2 class="text-danger mb-4">Habilidades</h2>
+                <div class="ps-0">
+                    <div class="habilidad-item">
+                        <strong>Mantenimiento:</strong> Preventivo y correctivo de hardware y software en computadores (portátiles y torres) e impresoras (láser y de tinta).
+                    </div>
+                    <div class="habilidad-item">
+                        <strong>Soporte de Aplicaciones:</strong> Instalación, configuración de parámetros, gestión de drivers y soporte técnico de aplicaciones corporativas.
+                    </div>
+                    <div class="habilidad-item">
+                        <strong>Herramientas de Desarrollo:</strong> Aprendizaje activo en Visual Studio Code, Git y GitHub.
+                    </div>
+                    <div class="habilidad-item">
+                        <strong>Ofimática:</strong> Manejo de herramientas como Excel y Word para reportes técnicos.
+                    </div>
+                </div>
             </section>
 
-            <section id="experiencia">
-                <h2 class="text-danger">Experiencia y Formación</h2>
+            <section id="experiencia" class="glass-card">
+                <h2 class="text-danger mb-5 text-center">Experiencia y Formación</h2>
+                
+                <div class="experiencia-card mb-4">
+                    <h3 class="h5 text-danger">Agente de Mesa de Ayuda Nivel 1 - Proyecto Ecopetrol</h3>
+                    <p>Brindo soporte técnico integral en Hardware y Software, enfocado en la calidad del servicio al cliente. Manejo herramientas corporativas como <strong>Service Manager y SharePoint</strong> para la gestión de casos y documentación.</p>
+                </div>
 
-                <article class="mb-4">
-                    <h3 class="h5 text-white">Agente de Mesa de Ayuda Nivel 1 - Proyecto Ecopetrol</h3>
-                    <p>Brindo soporte técnico integral en Hardware y Software, enfocado en la calidad del servicio al
-                        cliente. Manejo herramientas corporativas como <strong>Service Manager y SharePoint</strong>
-                        para la gestión de casos y documentación.</p>
-                </article>
+                <div class="experiencia-card mb-4">
+                    <h3 class="h5 text-danger">Técnico Laboral en Plataformas Tecnológicas y Aplicaciones</h3>
+                    <p>Formación de un año de duración (10 meses completados). He fortalecido conocimientos en mantenimiento preventivo y correctivo, calidad de servicio y fundamentos de desarrollo en <strong>Visual Studio Code, Git y GitHub</strong>.</p>
+                </div>
 
-                <article class="mb-4">
-                    <h3 class="h5 text-white">Técnico Laboral en Plataformas Tecnológicas y Aplicaciones</h3>
-                    <p>Formación de un año de duración (10 meses completados). He fortalecido conocimientos en
-                        mantenimiento preventivo y correctivo, calidad de servicio y fundamentos de desarrollo en
-                        <strong>Visual Studio Code, Git y GitHub</strong>.
-                    </p>
-                </article>
-
-                <article>
-                    <h3 class="h5 text-white">Bachiller Académico</h3>
+                <div class="experiencia-card">
+                    <h3 class="h5 text-danger">Bachiller Académico</h3>
                     <p>Título obtenido con bases sólidas en áreas transversales y competencias ciudadanas.</p>
-                </article>
+                </div>
             </section>
         </main>
 
-        <hr class="border-secondary mt-5">
-
-        <footer class="pb-5 mt-4">
-            <p>
-                <strong>Correo electrónico:</strong>
-                <a href="mailto:jeffryhernandez3099@gmail.com" class="text-decoration-none text-danger">
-                    jeffryhernandez3099@gmail.com
-                </a>
-            </p>
+        <footer class="py-5 text-center border-top border-dark mt-5">
+            <p><strong>Correo electrónico:</strong> <a href="mailto:jeffryhernandez3099@gmail.com">jeffryhernandez3099@gmail.com</a></p>
             <p><strong>Ciudad y país:</strong> Bogotá, Colombia</p>
-            <p><strong>Fecha:</strong> 21/02/2026</p>
-            <a href="https://github.com/JeffryCasasHernandez/mi-html-framework.git" target="_blank"
-                class="d-inline-block mt-2">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Logo GitHub" width="35">
+            <p><strong>Fecha:</strong> 22/02/2026</p>
+            <a href="https://github.com/JeffryCasasHernandez/mi-html-framework.git" target="_blank" class="d-inline-block mt-3">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="40" class="github-icon">
             </a>
         </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
