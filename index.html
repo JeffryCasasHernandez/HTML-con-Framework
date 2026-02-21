@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación - Jeffry Casas</title>
+    
+    <link href="https://bootswatch.com/5/cyborg/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --rojo-personal: #fa0202; }
+        body { font-family: 'Roboto Slab', serif; }
+        
+        /* Personalización de colores */
+        .text-danger { color: var(--rojo-personal) !important; }
+        .border-danger { border-color: var(--rojo-personal) !important; }
+        
+        /* Estilo de las cajas (Sections) */
+        section { 
+            background-color: #111; 
+            padding: 25px; 
+            border-radius: 10px; 
+            margin-bottom: 20px;
+            border: 1px solid #222;
+            transition: 0.3s;
+        }
+        section:hover { 
+            border-color: var(--rojo-personal);
+            background-color: #161616;
+        }
+
+        .img-perfil {
+            border: 4px solid var(--rojo-personal);
+            object-fit: cover;
+        }
+
+        /* Estilo para las listas igual al tuyo */
+        ul li { margin-bottom: 10px; }
+        
+        footer img {
+            filter: invert(1);
+            transition: 0.3s;
+        }
+        footer img:hover {
+            filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top mb-4">
+        <div class="container">
+            <a class="navbar-brand text-danger" href="#">MI PERFIL</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="#inicio">Inicio</a>
+                <a class="nav-link" href="#habilidades">Habilidades</a>
+                <a class="nav-link" href="#experiencia">Experiencia</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="inicio">
+        <header class="text-center mb-5">
+            <h1 class="text-danger mb-4">Tarjeta de Presentación</h1>
+            <img src="IMG-Perfil.jpg" alt="Foto-Perfil" class="rounded-circle img-perfil mb-4" width="150" height="150">
+            <div class="info-personal">
+                <p><strong>Nombre:</strong> Jeffry Santiago Casas Hernandez</p>
+                <p><strong>Profesión:</strong> Aprendiz en Técnico Laboral por Competencias Auxiliar en Plataformas Tecnológicas y Aplicaciones SG</p>
+                <p><strong>Cargo actual:</strong> Practicante en Agente de Mesa de Ayuda Nivel 1</p>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h2 class="text-danger"><strong>Perfil profesional</strong></h2>
+                <p>Soy bachiller académico y actualmente soy estudiante con 10 meses de formación técnica en Plataformas Tecnológicas. Me destaco por mi capacidad para aprender rápido y por mi trabajo como <strong>Agente de Soporte Nivel 1 para Ecopetrol</strong>.</p>
+            </section>
+
+            <section id="habilidades">
+                <h2 class="text-danger"><strong>Habilidades</strong></h2>
+                <ul>
+                    <li><strong>Mantenimiento:</strong> Preventivo y correctivo de hardware y software en computadores (portátiles y torres) e impresoras (láser y de tinta).</li>
+                    <li><strong>Soporte de Aplicaciones:</strong> Instalación, configuración de parámetros, gestión de drivers y soporte técnico de aplicaciones corporativas.</li>
+                    <li><strong>Herramientas de Desarrollo:</strong> Aprendizaje activo en Visual Studio Code, Git y GitHub.</li>
+                    <li><strong>Ofimática:</strong> Manejo de herramientas como Excel y Word para reportes técnicos.</li>
+                </ul>
+            </section>
+
+            <section id="experiencia">
+                <h2 class="text-danger">Experiencia y Formación</h2>
+
+                <article class="mb-4">
+                    <h3 class="h5 text-white">Agente de Mesa de Ayuda Nivel 1 - Proyecto Ecopetrol</h3>
+                    <p>Brindo soporte técnico integral en Hardware y Software, enfocado en la calidad del servicio al cliente. Manejo herramientas corporativas como <strong>Service Manager y SharePoint</strong> para la gestión de casos y documentación.</p>
+                </article>
+
+                <article class="mb-4">
+                    <h3 class="h5 text-white">Técnico Laboral en Plataformas Tecnológicas y Aplicaciones</h3>
+                    <p>Formación de un año de duración (10 meses completados). He fortalecido conocimientos en mantenimiento preventivo y correctivo, calidad de servicio y fundamentos de desarrollo en <strong>Visual Studio Code, Git y GitHub</strong>.</p>
+                </article>
+
+                <article>
+                    <h3 class="h5 text-white">Bachiller Académico</h3>
+                    <p>Título obtenido con bases sólidas en áreas transversales y competencias ciudadanas.</p>
+                </article>
+            </section>
+        </main>
+
+        <hr class="border-secondary mt-5">
+
+        <footer class="pb-5 mt-4">
+            <p><strong>Correo electrónico:</strong> jeffryhernandez3099@gmail.com</p>
+            <p><strong>Ciudad y país:</strong> Bogotá, Colombia</p>
+            <p><strong>Fecha:</strong> 08/02/2026</p>
+            <a href="https://github.com/JeffryCasasHernandez/mi-html-framework.git" target="_blank" class="d-inline-block mt-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Logo GitHub" width="35">
+            </a>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
